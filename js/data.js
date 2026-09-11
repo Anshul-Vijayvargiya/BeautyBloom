@@ -67,12 +67,12 @@ const services = [
 ];
 
 const galleryImages = [
-  'ChatGPT Image Sep 6, 2026, 11_12_09 AM.png',
-  'ChatGPT Image Sep 6, 2026, 11_18_41 AM.png',
-  'bridal makeup & hairstyle & jewelry.jpg',
-  'A photograph of a traditional Indian bride in a richly embroidered saree, adorned with jewelry and f.jpg',
-  'Radiant Haldi Bridal Makeup Look _ Yellow Floral Jewelry Inspiration.jpg',
-  'Elegant Mumbai Wedding With The Bride In A Beautiful Pastel Pink Lehenga.jpg'
+  'images/ChatGPT Image Sep 6, 2026, 11_12_09 AM.png',
+  'images/ChatGPT Image Sep 6, 2026, 11_18_41 AM.png',
+  'images/bridal makeup & hairstyle & jewelry.jpg',
+  'images/A photograph of a traditional Indian bride in a richly embroidered saree, adorned with jewelry and f.jpg',
+  'images/Radiant Haldi Bridal Makeup Look _ Yellow Floral Jewelry Inspiration.jpg',
+  'images/Elegant Mumbai Wedding With The Bride In A Beautiful Pastel Pink Lehenga.jpg'
 ];
 
 const testimonials = [
@@ -80,7 +80,7 @@ const testimonials = [
     name: 'Sarah Jenkins',
     role: 'Bride',
     text: '"The team at Bloom & Blush made me feel like absolute royalty on my wedding day. The makeup lasted all night and my hair was flawless!"',
-    image: 'Creatine work.jpg'
+    image: 'images/Creatine work.jpg'
   },
   {
     name: 'Elena Rodriguez',
@@ -97,10 +97,10 @@ const testimonials = [
 ];
 
 const team = [
-  { name: 'Sofia Ramirez', role: 'Lead Hair Stylist', image: 'Creatine work.jpg' },
-  { name: 'Dr. Priya Sharma', role: 'Skin Specialist', image: 'download.jpg' },
-  { name: 'Simran Kaur', role: 'Certified Nail Artist', image: 'Cosmetology School Dress Code Inspiration.jpg' },
-  { name: 'Aksita Vijayvargiya', role: 'Bridal Makeup Artist', image: 'ChatGPT Image Sep 4, 2026, 12_14_00 PM.png' }
+  { name: 'Sofia Ramirez', role: 'Lead Hair Stylist', image: 'images/Creatine work.jpg' },
+  { name: 'Dr. Priya Sharma', role: 'Skin Specialist', image: 'images/download.jpg' },
+  { name: 'Simran Kaur', role: 'Certified Nail Artist', image: 'images/Cosmetology School Dress Code Inspiration.jpg' },
+  { name: 'Aksita Vijayvargiya', role: 'Bridal Makeup Artist', image: 'images/ChatGPT Image Sep 4, 2026, 12_14_00 PM.png' }
 ];
 
 // Exporting to global window object so it's accessible without module bundlers
