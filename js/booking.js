@@ -365,41 +365,8 @@ async function handleConfirm() {
   btn.textContent = 'Processing...';
   btn.disabled = true;
 
-  try {
-    const service = window.salonData.services.find(s => s.id === bookingState.serviceId);
-    const lastBookingId = 'BB-' + Math.random().toString(36).slice(2, 8).toUpperCase();
-    bookingState.lastBookingId = lastBookingId; // Save it to display on step 6
-
-    const dateOptions = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
-    const formattedDate = bookingState.date 
-      ? new Date(bookingState.date).toLocaleDateString('en-IN', dateOptions) 
-      : '';
-
-    // Send WhatsApp notification
-    const response = await fetch('http://localhost:3000/api/send-booking-whatsapp', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        customerPhone: bookingState.user.phone,
-        customerName: bookingState.user.name,
-        date: formattedDate,
-        time: bookingState.time,
-        services: [{ name: service.name, price: service.price }],
-        bookingId: lastBookingId,
-        total: service.price
-      })
-    });
-
-    const result = await response.json();
-    
-    if (result.success) {
-      console.log('✓ WhatsApp message sent!', result.messageSid);
-    } else {
-      console.warn('WhatsApp failed (non-blocking):', result.error);
-    }
-  } catch (error) {
-    console.error('WhatsApp error (non-blocking):', error);
-  }
+  const lastBookingId = 'BB-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+  bookingState.lastBookingId = lastBookingId; // Save it to display on step 6
 
   goToStep(6);
 }
