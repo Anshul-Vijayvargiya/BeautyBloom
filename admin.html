@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom & Blush | Admin Dashboard</title>
+  <style>
+    :root {
+      --c-charcoal: #2E2A28;
+      --c-plum: #4A2536;
+      --c-rose: #B85C6B;
+      --c-blush: #E8D3D6;
+      --c-cream: #FBF7F2;
+      --c-white: #FFFFFF;
+      --c-gray-100: #F4F4F4;
+      --c-gray-200: #E6E6E6;
+      --c-gray-300: #CCCCCC;
+      
+      --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: var(--font-sans);
+      background: var(--c-cream);
+      color: var(--c-charcoal);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: var(--c-plum);
+      color: var(--c-white);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand {
+      padding: 24px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-list {
+      list-style: none;
+      padding: 16px 0;
+      flex: 1;
+    }
+
+    .nav-list li {
+      padding: 12px 24px;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: all 0.2s;
+    }
+
+    .nav-list li:hover, .nav-list li.active {
+      opacity: 1;
+      background: rgba(255,255,255,0.1);
+      border-left: 4px solid var(--c-rose);
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      height: 70px;
+      background: var(--c-white);
+      border-bottom: 1px solid var(--c-gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+    }
+
+    .content-area {
+      flex: 1;
+      padding: 32px;
+      overflow-y: auto;
+    }
+
+    .card {
+      background: var(--c-white);
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 24px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .stat-card {
+      background: var(--c-white);
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .stat-value { font-size: 2rem; font-weight: 600; color: var(--c-plum); margin-top: 8px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--c-gray-200);
+    }
+
+    th {
+      font-weight: 500;
+      color: #666;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+
+    .status {
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .status.confirmed { background: #E8F5E9; color: #2E7D32; }
+    .status.pending { background: #FFF3E0; color: #EF6C00; }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="brand">Bloom & Blush Admin</div>
+    <ul class="nav-list">
+      <li class="active">Dashboard</li>
+      <li>Appointments</li>
+      <li>Clients</li>
+      <li>Services</li>
+      <li>Settings</li>
+    </ul>
+    <div style="padding: 24px; margin-top: auto; opacity: 0.5; font-size: 0.85rem;">
+      Logged in as Admin
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="header">
+      <h2>Dashboard Overview</h2>
+      <div>
+        <button style="padding: 8px 16px; background: var(--c-rose); color: white; border: none; border-radius: 4px; cursor: pointer;">Export Data</button>
+      </div>
+    </header>
+
+    <div class="content-area">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div style="color: #666; font-size: 0.9rem;">Today's Appointments</div>
+          <div class="stat-value">12</div>
+        </div>
+        <div class="stat-card">
+          <div style="color: #666; font-size: 0.9rem;">Pending Requests</div>
+          <div class="stat-value">4</div>
+        </div>
+        <div class="stat-card">
+          <div style="color: #666; font-size: 0.9rem;">Monthly Revenue</div>
+          <div class="stat-value">$18,450</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-bottom: 24px;">Recent Appointments</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Ref</th>
+              <th>Client</th>
+              <th>Service</th>
+              <th>Date & Time</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BB-X92M</td>
+              <td>Sarah Jenkins</td>
+              <td>Bridal Hair Styling</td>
+              <td>Jul 10, 10:00 AM</td>
+              <td><span class="status confirmed">Confirmed</span></td>
+              <td><a href="#" style="color: var(--c-rose);">View</a></td>
+            </tr>
+            <tr>
+              <td>BB-K3L9</td>
+              <td>Elena Rodriguez</td>
+              <td>Balayage & Tone</td>
+              <td>Jul 10, 2:00 PM</td>
+              <td><span class="status pending">Pending</span></td>
+              <td><a href="#" style="color: var(--c-rose);">View</a></td>
+            </tr>
+            <tr>
+              <td>BB-P442</td>
+              <td>Michelle Chang</td>
+              <td>Rejuvenating Facial</td>
+              <td>Jul 11, 11:30 AM</td>
+              <td><span class="status confirmed">Confirmed</span></td>
+              <td><a href="#" style="color: var(--c-rose);">View</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

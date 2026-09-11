@@ -1,0 +1,516 @@
+/* Booking Modal Styles */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(46, 42, 40, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-slow);
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.booking-modal {
+  background: var(--c-cream);
+  width: 90%;
+  max-width: 1000px;
+  height: 90vh;
+  max-height: 800px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 24px 64px rgba(74, 37, 54, 0.2);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transform: translateY(20px) scale(0.98);
+  opacity: 0;
+  transition: all var(--transition-slow);
+  overflow: hidden;
+}
+
+.modal-backdrop.active .booking-modal {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--c-charcoal);
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background var(--transition-fast);
+}
+
+.modal-close:hover {
+  background: var(--c-blush);
+}
+
+/* Header & Progress */
+.modal-header {
+  padding: 32px 48px 24px;
+  border-bottom: 1px solid var(--c-gray-200);
+}
+
+.modal-header h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.progress-indicator {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.progress-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--c-gray-200);
+  transition: background var(--transition-fast);
+}
+
+.progress-dot.active {
+  background: var(--c-rose);
+}
+
+.progress-dot.completed {
+  background: var(--c-plum);
+}
+
+/* Modal Body */
+.modal-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.modal-content {
+  flex: 2;
+  padding: 32px 48px;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Sidebar Summary */
+.modal-sidebar {
+  flex: 1;
+  background: var(--c-white);
+  padding: 32px;
+  border-left: 1px solid var(--c-gray-200);
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-card {
+  margin-bottom: 24px;
+}
+
+.summary-card h4 {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--c-charcoal-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--c-gray-200);
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.summary-item.total {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--c-plum);
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--c-gray-200);
+}
+
+.summary-empty {
+  color: var(--c-charcoal-light);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Step Wizard Container */
+.step-container {
+  display: none;
+  animation: slideInRight 0.4s ease forwards;
+}
+
+.step-container.active {
+  display: block;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Footer Actions */
+.modal-footer {
+  padding: 24px 48px;
+  border-top: 1px solid var(--c-gray-200);
+  display: flex;
+  justify-content: space-between;
+  background: var(--c-cream);
+}
+
+.modal-footer .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Step 1: Services */
+.booking-categories {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.b-cat-btn {
+  padding: 6px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--c-gray-200);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.b-cat-btn.active {
+  background: var(--c-plum);
+  color: var(--c-white);
+  border-color: var(--c-plum);
+}
+
+.booking-service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.booking-service-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background: var(--c-white);
+  border: 1px solid var(--c-gray-200);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.booking-service-item:hover {
+  border-color: var(--c-blush);
+}
+
+.booking-service-item.selected {
+  border-color: var(--c-rose);
+  background: rgba(243, 214, 216, 0.2); /* very light blush */
+}
+
+.bs-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--c-gray-300);
+  border-radius: 4px;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.booking-service-item.selected .bs-checkbox {
+  background: var(--c-rose);
+  border-color: var(--c-rose);
+}
+
+.booking-service-item.selected .bs-checkbox::after {
+  content: "✓";
+  color: white;
+  font-size: 14px;
+}
+
+.bs-details {
+  flex: 1;
+}
+
+.bs-name {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.bs-meta {
+  font-size: 0.85rem;
+  color: var(--c-charcoal-light);
+}
+
+.bs-price {
+  font-weight: 600;
+  color: var(--c-plum);
+}
+
+/* Step 2: Calendar */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.calendar-nav {
+  background: transparent;
+  border: 1px solid var(--c-gray-200);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-nav:hover {
+  background: var(--c-blush);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  text-align: center;
+}
+
+.cal-day-header {
+  font-size: 0.85rem;
+  color: var(--c-charcoal-light);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.cal-date {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.cal-date:not(.disabled):hover {
+  border-color: var(--c-rose);
+}
+
+.cal-date.selected {
+  background: var(--c-rose);
+  color: var(--c-white);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(184, 92, 107, 0.3);
+}
+
+.cal-date.disabled {
+  color: var(--c-gray-300);
+  cursor: not-allowed;
+  background: rgba(244, 244, 244, 0.5);
+}
+
+.cal-notice {
+  margin-top: 24px;
+  padding: 12px;
+  background: rgba(201, 162, 75, 0.1);
+  color: var(--c-plum);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Step 3: Time Slots */
+.time-slot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.time-slot {
+  padding: 12px 0;
+  text-align: center;
+  border: 1px solid var(--c-gray-200);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  background: var(--c-white);
+}
+
+.time-slot:not(.booked):hover {
+  border-color: var(--c-rose);
+  color: var(--c-rose);
+}
+
+.time-slot.selected {
+  background: var(--c-rose);
+  color: var(--c-white);
+  border-color: var(--c-rose);
+}
+
+.time-slot.booked {
+  background: var(--c-gray-100);
+  color: var(--c-gray-300);
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+/* Step 4: Details Form (reuses standard form classes) */
+
+/* Step 5: Review & Payment */
+.payment-options {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.pay-option {
+  flex: 1;
+  padding: 20px;
+  border: 2px solid var(--c-gray-200);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.pay-option.selected {
+  border-color: var(--c-rose);
+  background: rgba(243, 214, 216, 0.1);
+}
+
+.pay-option h4 {
+  font-family: var(--font-sans);
+  margin-bottom: 8px;
+}
+
+.mock-card-form {
+  background: var(--c-white);
+  padding: 24px;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--c-gray-300);
+  display: none;
+}
+
+.mock-card-form.active {
+  display: block;
+  animation: fadeIn 0.3s;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Step 6: Confirmation */
+.confirmation-container {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--c-rose);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin: 0 auto 24px;
+}
+
+.confirmation-details {
+  background: var(--c-white);
+  padding: 24px;
+  border-radius: var(--radius-sm);
+  margin: 32px 0;
+  text-align: left;
+}
+
+.booking-ref {
+  font-family: monospace;
+  background: var(--c-gray-100);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+  .booking-modal {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+  
+  .modal-body {
+    flex-direction: column;
+  }
+  
+  .modal-sidebar {
+    border-left: none;
+    border-top: 1px solid var(--c-gray-200);
+    padding: 20px;
+  }
+  
+  .modal-content {
+    padding: 24px 20px;
+  }
+  
+  .modal-header, .modal-footer {
+    padding: 20px;
+  }
+  
+  .time-slot-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .time-slot-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .payment-options {
+    flex-direction: column;
+  }
+}

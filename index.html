@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom & Blush | Premium Salon & Spa</title>
+  <meta name="description" content="Experience unparalleled beauty and relaxation at Bloom & Blush, your premier destination for hair, makeup, nails, and spa services.">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">Bloom & Blush</a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">Our Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="btn btn-primary" onclick="window.openBookingModal()">Book Appointment</button></li>
+      </ul>
+      <button class="mobile-menu-toggle">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Redefining Beauty</span>
+        <h1>Where Elegance Meets Expertise</h1>
+        <p>Step into a sanctuary of style and serenity. Our master stylists and aestheticians are dedicated to bringing your vision to life.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="window.openBookingModal()">Book Now</button>
+          <a href="#services" class="btn btn-secondary">View Services</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="ChatGPT Image Sep 6, 2026, 10_41_59 AM.png" alt="Beautiful woman at salon">
+        <!-- <div class="testimonial-badge">
+          <div class="stars">★★★★★</div>
+          <p>"The best salon experience I've ever had."</p>
+        </div>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-container">
+    <div class="marquee-content">
+      <div class="marquee-item">Luxury Hair Styling</div>
+      <div class="marquee-item">Flawless Makeup</div>
+      <div class="marquee-item">Nail Artistry</div>
+      <div class="marquee-item">Rejuvenating Spa</div>
+      <div class="marquee-item">Bridal Packages</div>
+      <!-- Duplicate for seamless loop -->
+      <div class="marquee-item">Luxury Hair Styling</div>
+      <div class="marquee-item">Flawless Makeup</div>
+      <div class="marquee-item">Nail Artistry</div>
+      <div class="marquee-item">Rejuvenating Spa</div>
+      <div class="marquee-item">Bridal Packages</div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>Curated treatments designed to enhance your natural beauty and provide ultimate relaxation.</p>
+      </div>
+      
+      <div class="service-tabs" id="service-tabs">
+        <!-- Tabs injected via JS -->
+      </div>
+      
+      <div class="services-grid" id="services-grid">
+        <!-- Service cards injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <div class="section-header">
+        <h2>The Gallery</h2>
+        <p>A glimpse into our world of beauty and transformation.</p>
+      </div>
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Gallery items injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">&times;</button>
+    <img src="ChatGPT Image Sep 6, 2026, 10_41_59 AM.png" alt="Gallery Preview" id="lightbox-img">
+  </div>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>Client Love</h2>
+        <p>Don't just take our word for it. Hear what our beloved clients have to say.</p>
+      </div>
+      <div class="testimonial-grid" id="testimonial-grid">
+        <!-- Testimonials injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Team Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-image">
+          <img src="ppss.webp" alt="Salon Interior">
+        </div>
+        <div class="about-text">
+          <h2>The Bloom & Blush Experience</h2>
+          <p>Founded in 2020, our mission has always been to provide a luxurious escape from the everyday. We believe that beauty is personal, which is why every service begins with a thorough consultation.</p>
+          <p>Our space is designed to be your sanctuary—a place where you can unwind, indulge, and leave feeling completely renewed.</p>
+        </div>
+      </div>
+      
+      <div class="section-header">
+        <h2>Meet the Artists</h2>
+      </div>
+      <div class="team-grid" id="team-grid">
+        <!-- Team members injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info-card">
+          <h3>Get in Touch</h3>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <div>
+              <p>123 Luxury Lane, Suite 100</p>
+              <p>Beverly Hills, CA 90210</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <p><a href="tel:+1234567890">(555) 123-4567</a></p>
+          </div>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <p><a href="mailto:hello@bloomandblush.com">hello@bloomandblush.com</a></p>
+          </div>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <div>
+              <p>Tue - Sun: 10:00 AM - 8:00 PM</p>
+              <p>Monday: Closed</p>
+            </div>
+          </div>
+          <button class="btn whatsapp-btn">Chat on WhatsApp</button>
+        </div>
+        
+        <form class="contact-form" id="contactForm">
+          <h3 class="mb-4">Send us a message</h3>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Jane Doe">
+            <div class="error-msg">Please enter your name</div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" class="form-control" placeholder="jane@example.com">
+            <div class="error-msg">Please enter a valid email</div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" class="form-control" placeholder="How can we help you?"></textarea>
+            <div class="error-msg">Please enter a message</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo">Bloom & Blush</span>
+          <p>Where every detail is curated for your ultimate beauty experience.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">Team</a></li>
+            <li><a href="#" onclick="window.openBookingModal(); return false;">Book</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cancellation Policy</a></li>
+          </ul>
+        </div>
+        <div class="newsletter">
+          <h4>Join our Newsletter</h4>
+          <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 16px;">Get exclusive offers and beauty tips.</p>
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Your email">
+            <button class="btn btn-primary">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Bloom & Blush Salon. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="btn btn-primary floating-book-btn" onclick="window.openBookingModal()">Book Now</button>
+
+
+  <!-- ============================================== -->
+  <!-- BOOKING WIZARD MODAL -->
+  <!-- ============================================== -->
+  <div class="modal-backdrop" id="bookingModalBackdrop">
+    <div class="booking-modal">
+      <button class="modal-close">&times;</button>
+      
+      <div class="modal-header">
+        <h2>Book Your Appointment</h2>
+        <div class="progress-indicator">
+          <div class="progress-dot active" title="Services"></div>
+          <div class="progress-dot" title="Date"></div>
+          <div class="progress-dot" title="Time"></div>
+          <div class="progress-dot" title="Details"></div>
+          <div class="progress-dot" title="Payment"></div>
+          <div class="progress-dot" title="Done"></div>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        
+        <div class="modal-content">
+          <!-- Step 1: Services -->
+          <div class="step-container active" id="step1">
+            <h3 style="margin-bottom: 24px;">Select a Service</h3>
+            <div class="booking-categories" id="b-categories"></div>
+            <div class="booking-service-list" id="b-services-list"></div>
+          </div>
+
+          <!-- Step 2: Date -->
+          <div class="step-container" id="step2">
+            <h3 style="margin-bottom: 24px;">Select Date</h3>
+            <div class="calendar-header">
+              <button class="calendar-nav" id="cal-prev">&lt;</button>
+              <h4 id="b-cal-month">July 2026</h4>
+              <button class="calendar-nav" id="cal-next">&gt;</button>
+            </div>
+            <div class="calendar-grid" id="b-cal-grid"></div>
+            <div class="cal-notice">We are closed on Mondays.</div>
+          </div>
+
+          <!-- Step 3: Time -->
+          <div class="step-container" id="step3">
+            <h3 style="margin-bottom: 24px;">Select Time</h3>
+            <p style="color: var(--c-charcoal-light)">Available slots for your selected date:</p>
+            <div class="time-slot-grid" id="b-time-grid"></div>
+          </div>
+
+          <!-- Step 4: User Details -->
+          <div class="step-container" id="step4">
+            <h3 style="margin-bottom: 24px;">Your Details</h3>
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" id="b-name" class="form-control" placeholder="Jane Doe">
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" id="b-email" class="form-control" placeholder="jane@example.com">
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" id="b-phone" class="form-control" placeholder="(555) 123-4567">
+            </div>
+            <div class="form-group">
+              <label>Special Requests / Notes</label>
+              <textarea id="b-notes" class="form-control" style="min-height: 80px;" placeholder="Any allergies, preferences, etc."></textarea>
+            </div>
+          </div>
+
+          <!-- Step 5: Payment -->
+          <div class="step-container" id="step5">
+            <h3 style="margin-bottom: 24px;">Payment Method</h3>
+            <div class="payment-options">
+              <div class="pay-option selected" id="opt-card">
+                <h4>Credit Card</h4>
+                <p style="font-size: 0.85rem; color: var(--c-charcoal-light)">Pay securely now</p>
+              </div>
+              <div class="pay-option" id="opt-store">
+                <h4>Pay In-Store</h4>
+                <p style="font-size: 0.85rem; color: var(--c-charcoal-light)">Pay after service</p>
+              </div>
+            </div>
+
+            <div class="mock-card-form active" id="mock-card-form">
+              <div class="form-group">
+                <label>Card Number</label>
+                <input type="text" id="cc-num" class="form-control" placeholder="0000 0000 0000 0000">
+              </div>
+              <div class="card-grid">
+                <div class="form-group">
+                  <label>Expiry (MM/YY)</label>
+                  <input type="text" class="form-control" placeholder="MM/YY">
+                </div>
+                <div class="form-group">
+                  <label>CVC</label>
+                  <input type="text" id="cc-cvc" class="form-control" placeholder="123">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 6: Confirmation -->
+          <div class="step-container" id="step6">
+            <div class="confirmation-container">
+              <div class="success-icon">✓</div>
+              <h3>Booking Confirmed!</h3>
+              <p style="color: var(--c-charcoal-light); margin-top: 8px;">We've sent a confirmation email with details.</p>
+              
+              <div class="confirmation-details" id="confirm-details">
+                <!-- Injected via JS -->
+              </div>
+
+              <p>Reference: <span class="booking-ref" id="confirm-ref"></span></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-sidebar">
+          <div class="summary-card">
+            <h4>Booking Summary</h4>
+            <div id="sum-service" class="summary-item"><span class="summary-empty">No service selected</span></div>
+            <div id="sum-date" class="summary-item"><span class="summary-empty">No date selected</span></div>
+            <div id="sum-time" class="summary-item"><span class="summary-empty">No time selected</span></div>
+            <div id="sum-total" class="summary-item total"><span>Total</span><span>$0</span></div>
+          </div>
+          <div style="margin-top: auto; padding: 24px; background: var(--c-cream); border-radius: var(--radius-sm);">
+            <p style="font-size: 0.85rem; text-align: center;">Need help? Call us at <br><strong>(555) 123-4567</strong></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="btnCancelBooking" style="border: none;">Cancel</button>
+        <button class="btn btn-secondary" id="btnPrevStep" style="display: none;">Back</button>
+        <button class="btn btn-primary" id="btnNextStep" style="margin-left: auto;" disabled>Next Step</button>
+        <button class="btn btn-primary" id="btnConfirmBooking" style="display: none; margin-left: auto;">Confirm Booking</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
